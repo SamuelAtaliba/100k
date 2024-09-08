@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Investimento de Renda Fixa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Investimento</h1>
+        <form id="investmentForm">
+            <label for="aporte">Aporte Mensal (R$):</label>
+            <input type="number" id="aporte" required>
+
+            <label for="anos">Número de Anos:</label>
+            <input type="number" id="anos" required>
+
+            <label for="selic">Taxa Selic Anual (%):</label>
+            <input type="number" id="selic" step="0.01" required>
+
+            <div class="selic-info">
+                <span id="selicMensal"></span>
+            </div>
+
+            <button type="button" id="calcularBtn">Calcular</button>
+            <button type="button" onclick="exportarDadosCSV(valoresAnuais)" style="background-color: #4CAF50;">Exportar Dados</button>
+        </form>
+
+        <canvas id="investmentChart"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
